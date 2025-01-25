@@ -1,3 +1,5 @@
+import spinner from "../assets/spinner.svg"
+
 import "./SignInForm.css"
 
 function SignInForm(props) {
@@ -37,8 +39,12 @@ function SignInForm(props) {
             onChange={onChange}
           />
         </div>
+        {!!props.error && <div className="signin-form__error">{props.error}</div>}
         <div>
-          <input type="submit" value="Sign In" />
+          <button type="submit" disabled={props.isLoading}>
+            <span className={props.isLoading ? "invisible" : ""}>Sign in</span>
+            {props.isLoading && <img src={spinner} className="signin-form__spinner" alt="" />}
+          </button>
         </div>
         <div className="signin-form__footer">
           <p>

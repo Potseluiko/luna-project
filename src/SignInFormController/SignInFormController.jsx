@@ -7,7 +7,12 @@ function SignInFormController() {
     password: "",
   })
 
+  const [error, setError] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
+
   const onChange = (data) => {
+    setError("")
+
     setFormData({
       ...formData,
       ...data,
@@ -16,6 +21,8 @@ function SignInFormController() {
 
   const onSubmit = async (event) => {
     event.preventDefault()
+
+    setIsLoading(true)
 
     try {
       const response = await fetch("/api/signin", {
@@ -29,16 +36,28 @@ function SignInFormController() {
       const body = await response.json()
 
       if (response.ok) {
-        console.log("SUCCESS", body)
+        setError("")
       } else {
-        console.log("ERROR", body)
+        setError(body.message)
       }
+      setIsLoading(false)
     } catch (error) {
       console.error("Submit error: ", error)
+      setError("Something went wrong. Try again later")
+      setIsLoading(false)
     }
   }
 
-  return <SignInForm email={formData.email} password={formData.password} onChange={onChange} onSubmit={onSubmit} />
+  return (
+    <SignInForm
+      email={formData.email}
+      password={formData.password}
+      error={error}
+      isLoading={isLoading}
+      onChange={onChange}
+      onSubmit={onSubmit}
+    />
+  )
 }
 
 export default SignInFormController

@@ -11,7 +11,7 @@
 }
 
 .signin-form__field {
-  margin-bottom: 16px;
+  margin: 16px 0;
 }
 
 .signin-form input {
@@ -19,10 +19,14 @@
   padding: 12px 12px;
   box-sizing: border-box;
   font-size: 16px;
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 4px;
+}
+
+.signin-form input::placeholder {
+  color: #666;
 }
 
 /*.signin-form input:-internal-autofill-selected {*/
@@ -34,9 +38,45 @@
   padding: 12px 20px;
   box-sizing: border-box;
   font-size: 16px;
-  background: #fff;
-  border: none;
   border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.signin-form button[disabled] {
+  cursor: default;
+}
+
+.signin-form button:not([disabled]):hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.signin-form button .invisible {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.signin-form button img {
+  margin: -16px 0 0 -16px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 32px;
+  color: white;
+}
+
+.signin-form__error {
+  margin: 8px 0 20px;
+  color: rgb(255 184 181 / 1);
 }
 
 .signin-form__link {
