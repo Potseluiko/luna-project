@@ -1,20 +1,20 @@
-.login-form {
+.signin-form {
   /*padding: 24px 24px;*/
   /*border: 1px solid rgba(255, 255, 255, 0.6);*/
   border-radius: 8px;
 }
 
-.login-form__title {
+.signin-form__title {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.login-form__field {
+.signin-form__field {
   margin-bottom: 16px;
 }
 
-.login-form input {
+.signin-form input {
   width: 100%;
   padding: 12px 12px;
   box-sizing: border-box;
@@ -25,11 +25,11 @@
   border-radius: 4px;
 }
 
-/*.login-form input:-internal-autofill-selected {*/
+/*.signin-form input:-internal-autofill-selected {*/
 /*  background-color: rebeccapurple !important;;*/
 /*}*/
 
-.login-form button {
+.signin-form button {
   width: 100%;
   padding: 12px 20px;
   box-sizing: border-box;
@@ -39,23 +39,23 @@
   border-radius: 4px;
 }
 
-.login-form__link {
+.signin-form__link {
   color: #fff;
   text-decoration: none;
 }
 
-.login-form__link:hover {
+.signin-form__link:hover {
   color: #bbb;
 }
 
-.login-form__footer {
+.signin-form__footer {
   margin: 36px 0 0;
 }
 
-.login-form__footer p {
+.signin-form__footer p {
   margin: 0 0 4px;
 }
 
-.login-form__footer p:last-child {
+.signin-form__footer p:last-child {
   margin-bottom: 0;
 }

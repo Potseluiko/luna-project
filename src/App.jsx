@@ -1,7 +1,6 @@
+import SignInFormController from "./SignInFormController/SignInFormController.jsx"
 import lunaImg from "/luna.svg"
 import "./App.css"
-
-import LoginFormController from "./LoginFormController/LoginFormController.jsx"
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
         <div className="logo-text">Luna Project</div>
       </div>
       <div className="contet">
-        <LoginFormController />
+        <SignInFormController />
       </div>
     </div>
   )
