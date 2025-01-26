@@ -19,6 +19,13 @@ function SignInFormController() {
     })
   }
 
+  const clearPassword = () => {
+    setFormData({
+      ...formData,
+      password: "",
+    })
+  }
+
   const onSubmit = async (event) => {
     event.preventDefault()
 
@@ -40,6 +47,7 @@ function SignInFormController() {
         console.log("Sign in successful. Redirecting to the App.")
       } else {
         setError(body.message)
+        clearPassword()
       }
       setIsLoading(false)
     } catch (error) {

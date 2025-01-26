@@ -1,9 +1,10 @@
 .link {
-  color: #fff;
+  color: var(--link-primary);
   text-decoration: none;
+  transition: color 300ms ease-in-out;
 
   &:hover {
-    color: #bbb;
+    color: var(--link-hover-primary);
+    text-decoration: none;
   }
 }
-
