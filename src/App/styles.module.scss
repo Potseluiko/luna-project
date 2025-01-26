@@ -1,0 +1,28 @@
+.root {
+  margin: 0 auto;
+  padding: 48px 24px;
+  max-width: 400px;
+}
+
+.header {
+  margin: 0 0 48px;
+  text-align: center;
+}
+
+.logo {
+
+  &-image {
+    height: 100px;
+  }
+
+  &-text {
+    margin-top: 12px;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+.content {
+}

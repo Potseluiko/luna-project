@@ -1,5 +1,5 @@
 import { useState } from "react"
-import SignInForm from "../SignInForm/SignInForm.jsx"
+import SignInForm from "../SignInForm"
 
 function SignInFormController() {
   const [formData, setFormData] = useState({
@@ -37,6 +37,7 @@ function SignInFormController() {
 
       if (response.ok) {
         setError("")
+        console.log("Sign in successful. Redirecting to the App.")
       } else {
         setError(body.message)
       }
