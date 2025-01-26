@@ -49,30 +49,32 @@
   transition:
     background-color 0.3s,
     border-color 0.3s;
+
+  &:not([disabled]):hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  &[disabled] {
+    cursor: default;
+  }
+
+
+  .invisible {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  img {
+    margin: -16px 0 0 -16px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 32px;
+    color: white;
+  }
 }
 
-.signin-form button[disabled] {
-  cursor: default;
-}
-
-.signin-form button:not([disabled]):hover {
-  border-color: rgba(255, 255, 255, 0.7);
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.signin-form button .invisible {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.signin-form button img {
-  margin: -16px 0 0 -16px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 32px;
-  color: white;
-}
 
 .signin-form__error {
   margin: 8px 0 20px;

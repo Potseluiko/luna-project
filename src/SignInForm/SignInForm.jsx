@@ -1,6 +1,5 @@
 import spinner from "../assets/spinner.svg"
-
-import "./SignInForm.css"
+import styles from "./SignInForm.module.scss"
 
 function SignInForm(props) {
   const onChange = (event) => {
@@ -10,11 +9,11 @@ function SignInForm(props) {
   }
 
   return (
-    <div className="signin-form">
-      <div className="signin-form__title">Sign in</div>
+    <div className={styles["signin-form"]}>
+      <div className={styles["signin-form__title"]}>Sign in</div>
 
       <form onSubmit={props.onSubmit} method="post">
-        <div className="signin-form__field">
+        <div className={styles["signin-form__field"]}>
           <input
             autoFocus="autofocus"
             autoComplete="email"
@@ -27,7 +26,7 @@ function SignInForm(props) {
             onChange={onChange}
           />
         </div>
-        <div className="signin-form__field">
+        <div className={styles["signin-form__field"]}>
           <input
             autoComplete="current-password"
             label="false"
@@ -39,21 +38,21 @@ function SignInForm(props) {
             onChange={onChange}
           />
         </div>
-        {!!props.error && <div className="signin-form__error">{props.error}</div>}
+        {!!props.error && <div className={styles["signin-form__error"]}>{props.error}</div>}
         <div>
           <button type="submit" disabled={props.isLoading}>
-            <span className={props.isLoading ? "invisible" : ""}>Sign in</span>
-            {props.isLoading && <img src={spinner} className="signin-form__spinner" alt="" />}
+            <span className={props.isLoading ? styles.invisible : ""}>Sign in</span>
+            {props.isLoading && <img src={spinner} className={styles["signin-form__spinner"]} alt="" />}
           </button>
         </div>
-        <div className="signin-form__footer">
+        <div className={styles["signin-form__footer"]}>
           <p>
-            <a href="/register" className="signin-form__link">
+            <a href="/register" className={styles["signin-form__link"]}>
               Sign up
             </a>
           </p>
           <p>
-            <a href="/forgot-password" className="signin-form__link">
+            <a href="/forgot-password" className={styles["signin-form__link"]}>
               Forgot your password?
             </a>
           </p>
