@@ -1,4 +1,4 @@
-import SignInFormController from "../SignInFormController"
+import SignInFormController from "../../controllers/SignInFormController/index.jsx"
 import lunaImg from "/luna.svg"
 import classes from "./styles.module.scss"
 

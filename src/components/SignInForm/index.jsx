@@ -1,6 +1,6 @@
-import Button from "../components/button"
-import Input from "../components/input"
-import Link from "../components/Link"
+import Button from "../../view-components/button/index.jsx"
+import Input from "../../view-components/input/index.jsx"
+import Link from "../../view-components/link/index.jsx"
 import classes from "./styles.module.scss"
 
 function SignInForm({ onChange, ...props }) {
