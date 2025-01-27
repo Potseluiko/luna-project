@@ -1,3 +1,5 @@
+@use "../../styles/mixins" as mixins;
+
 .root {
   margin: 0 auto;
   padding: 60px 24px 80px 24px;
@@ -16,9 +18,10 @@
   }
 
   &-text {
+    @include mixins.text-xlg;
+    @include mixins.font-semibold;
+
     margin-top: 12px;
-    font-size: 26px;
-    font-weight: 700;
     text-transform: uppercase;
     white-space: nowrap;
   }
