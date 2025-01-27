@@ -1,0 +1,61 @@
+@mixin font-inter {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+@mixin font-light {
+  font-weight: 300;
+}
+
+@mixin font-normal {
+  font-weight: 400;
+}
+
+@mixin font-medium {
+  font-weight: 500;
+}
+
+@mixin font-semibold {
+  font-weight: 600;
+}
+
+@mixin font-bold {
+  font-weight: 700;
+}
+
+@mixin text-base {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@mixin text-lg {
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+@mixin text-sm {
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+@mixin transition {
+  transition-property: color, background-color, border-color, text-decoration-color, opacity, box-shadow ;
+  transition-timing-function: ease-in;
+  transition-duration: .2s;
+}
+
+@mixin focus {
+  &:focus {
+    outline-color: hsl(0, 0%, 100%);
+    outline-offset: 1px;
+    outline-width: 2px;
+  }
+}
+
+@mixin focus-visible {
+  &:focus-visible {
+    @include focus;
+  }
+}
+
+
+

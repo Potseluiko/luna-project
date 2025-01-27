@@ -1,3 +1,5 @@
+@use "../../styles/mixins" as mixins;
+
 .link {
   color: var(--link-primary);
   text-decoration: none;
@@ -7,4 +9,6 @@
     color: var(--link-hover-primary);
     text-decoration: none;
   }
+
+  @include mixins.focus-visible;
 }

@@ -1,25 +1,30 @@
-.button {
+@use "../../styles/mixins" as mixins;
 
+.button {
+  @include mixins.text-sm;
+  @include mixins.font-medium;
+  @include mixins.transition;
 
   width: 100%;
   padding: 12px 20px;
   box-sizing: border-box;
-  font-size: var(--font-size-button);
-  color: var(--text-primary);
-  cursor: pointer;
+  color: hsl(0, 0%, 0%);
   text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.4);
-  transition: background-color 0.3s, border-color 0.3s;
+  background: hsl(0, 0%, 98%);
+  border: 1px solid hsl(0, 0%, 98%);
 
   &:not([disabled]):hover {
-    border-color: rgba(255, 255, 255, 0.7);
-    background: rgba(0, 0, 0, 0.7);
+    background-color: hsl(0, 0%, 88%);
+    border-color: hsl(0, 0%, 88%);
   }
 
   &[disabled] {
-    cursor: default;
-    background-color: rgba(0, 0, 0, 0.1);
+    cursor: not-allowed;
+    border-color: hsl(0, 0%, 59%);
+    background-color: hsl(0, 0%, 59%);
   }
+
+  @include mixins.focus-visible;
 }

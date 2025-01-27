@@ -1,14 +1,25 @@
+@use "../../styles/mixins" as mixins;
+
 .input {
+  @include mixins.text-base;
+  @include mixins.font-medium;
+  @include mixins.transition;
+
   padding: 12px 12px;
   width: 100%;
   box-sizing: border-box;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid hsl(0, 0%, 44%);
   border-radius: 4px;
-  background: rgba(255, 255, 255, 1);
-}
+  background: hsl(0, 0%, 10%);
 
-.input::placeholder {
-  color: #666;
+  &:hover {
+    border-color: hsl(218, 11%, 65%);
+  }
+
+  &::placeholder {
+    color: hsl(0, 0%, 44%);
+  }
+
+  @include mixins.focus-visible;
+  @include mixins.focus;
 }

@@ -1,0 +1,47 @@
+@use "mixins" as mixins;
+
+:root {
+  --text-primary: hsla(0, 0%, 100%, 0.87);
+  --text-error: hsl(0, 100%, 85%);
+  --link-primary: hsla(0, 0%, 100%, 0.87);
+  --link-primary-hover: hsla(50, 100%, 50%, 1);
+  --bg-primary: hsl(0, 0%, 14%);
+
+  @include mixins.font-inter;
+  @include mixins.font-normal;
+  @include mixins.text-base;
+
+  color-scheme: dark;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+  border: none;
+}
+
+button, input, select, textarea {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 100%;
+  line-height: inherit;
+}
+
+[type=button], [type=reset], [type=submit], button {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+}
+
+[role=button], button {
+  cursor: pointer;
+}

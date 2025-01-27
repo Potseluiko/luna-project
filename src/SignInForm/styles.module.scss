@@ -1,6 +1,10 @@
+@use "../styles/mixins" as mixins;
+
 .title {
+  @include mixins.font-semibold;
+  @include mixins.text-lg;
+
   margin-bottom: 20px;
-  font-weight: 600;
 }
 
 .field {
@@ -9,9 +13,9 @@
 
 .error {
   margin: 8px 0 20px;
-  color: var(--error);
+  color: var(--text-error);
 }
 
 .footer {
-  margin-top: 36px;
+  margin-top: 24px;
 }
