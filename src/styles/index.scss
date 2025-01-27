@@ -1,11 +1,18 @@
 @use "mixins" as mixins;
 
 :root {
-  --text-primary: hsla(0, 0%, 100%, 0.87);
+  --text-primary: hsl(240, 20%, 99%);
   --text-error: hsl(0, 100%, 85%);
-  --link-primary: hsla(0, 0%, 100%, 0.87);
-  --link-primary-hover: hsla(50, 100%, 50%, 1);
-  --bg-primary: hsl(0, 0%, 14%);
+  --link-primary: hsl(240, 20%, 99%);
+  --link-primary-hover: hsl(50, 100%, 50%);
+  --bg-base: hsl(0, 0%, 10%);
+  --border: hsl(0, 0%, 44%);
+  --border-emphasis: hsl(218, 11%, 65%);
+  --brand: hsl(0, 0%, 98%);
+  --brand-emphasis: hsl(0, 0%, 88%);
+  --brand-subtle: hsl(0, 0%, 59%);
+  --brand-text: hsl(0, 0%, 0%);
+  --brand-accent: hsl(0, 0%, 0%);
 
   @include mixins.font-inter;
   @include mixins.font-normal;
@@ -13,7 +20,7 @@
 
   color-scheme: dark;
   color: var(--text-primary);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-base);
 }
 
 body {
