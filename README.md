@@ -1,8 +1,13 @@
-# React + Vite
+# Luna project (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The project contains only a Sign In form.
 
-Currently, two official plugins are available:
+You can use the following test data to see how the form works:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Email: `demo@demo.com` and Password: `demo` → successful sign-in;
+- Email: `error@error.com` and Password: `error` → simulates a network error;
+- Any other data → displays an error indicating the data is incorrect.
+
+On successful sign-in, a message is logged to the console.  
+
+
