@@ -1,6 +1,8 @@
 import { http, delay, HttpResponse } from "msw"
 
 export const handlers = [
+  http.get("/*", async () => {}),
+
   http.post("/api/signin", async ({ request }) => {
     let nextPost
 
