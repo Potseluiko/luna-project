@@ -16,6 +16,7 @@ function SignInForm({ onChange, ...props }) {
       <form onSubmit={props.onSubmit}>
         <div className={classes.field}>
           <Input
+            fullWidth
             autoFocus="autofocus"
             autoComplete="email"
             label="false"
@@ -29,6 +30,7 @@ function SignInForm({ onChange, ...props }) {
         </div>
         <div className={classes.field}>
           <Input
+            fullWidth
             autoComplete="current-password"
             label="false"
             placeholder="Password"
@@ -40,8 +42,8 @@ function SignInForm({ onChange, ...props }) {
           />
         </div>
         {!!props.error && <div className={classes.error}>{props.error}</div>}
-        <Button type="submit" disabled={props.isLoading}>
-          Sign in
+        <Button fullWidth type="submit" disabled={props.isLoading}>
+          Sign In
         </Button>
       </form>
       <div className={classes.footer}>
