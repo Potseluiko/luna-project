@@ -1,5 +1,5 @@
 import classnames from "classnames"
-import classes from "./styles.module.scss"
+import classes from "./Input.module.scss"
 
 const Input = (props) => {
   const { className, ...rest } = props

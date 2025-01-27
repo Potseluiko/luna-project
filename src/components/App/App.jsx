@@ -1,13 +1,13 @@
-import SignInFormController from "../../controllers/SignInFormController/index.jsx"
+import SignInFormController from "../../controllers/SignInFormController/SignInFormController.jsx"
 import lunaImg from "/luna.svg"
-import classes from "./styles.module.scss"
+import classes from "./App.module.scss"
 
 function App() {
   return (
     <div className={classes.root}>
       <div className={classes.header}>
         <div className={classes.logo}>
-          <img src={lunaImg} className={classes["logo-image"]} alt="Luna logo" />
+          <img src={lunaImg} className={classes["logo-image"]} alt="Luna Project logo" />
           <div className={classes["logo-text"]}>Luna Project</div>
         </div>
       </div>

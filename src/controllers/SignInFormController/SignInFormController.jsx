@@ -1,5 +1,5 @@
 import { useState } from "react"
-import SignInForm from "../../components/SignInForm/index.jsx"
+import SignInForm from "../../components/SignInForm/SignInForm.jsx"
 
 function SignInFormController() {
   const [formData, setFormData] = useState({
