@@ -42,7 +42,7 @@ function SignInForm({ onChange, ...props }) {
           />
         </div>
         {!!props.error && <div className={classes.error}>{props.error}</div>}
-        <Button fullWidth type="submit" disabled={props.isLoading}>
+        <Button fullWidth type="submit" disabled={props.isPending}>
           Sign In
         </Button>
       </form>

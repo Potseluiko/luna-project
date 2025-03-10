@@ -1,17 +1,21 @@
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { postSignIn } from "../../features/currentUser/currentUserActions"
 import SignInForm from "../../components/SignInForm/SignInForm.jsx"
 
 function SignInFormController() {
+  const dispatch = useDispatch()
+
+  const [isPending, setIsPending] = useState(false)
+  const [error, setError] = useState(null)
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   })
 
-  const [error, setError] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
-
   const onChange = (data) => {
-    setError("")
+    setError(null)
 
     setFormData({
       ...formData,
@@ -29,32 +33,29 @@ function SignInFormController() {
   const onSubmit = async (event) => {
     event.preventDefault()
 
-    setIsLoading(true)
+    setIsPending(true)
 
-    try {
-      const response = await fetch("/api/signin", {
-        method: "POST",
-        body: JSON.stringify({
+    dispatch(
+      postSignIn({
+        payload: {
           email: formData.email,
           password: formData.password,
-        }),
+        },
       })
+    )
+      .unwrap()
+      .then((response) => {
+        console.log("Sign in successful. Redirecting to the App.", response)
+        setIsPending(false)
+      })
+      .catch((error) => {
+        if (error?.response?.data?.code === "USER_NOT_FOUND") {
+          clearPassword()
+        }
 
-      const body = await response.json()
-
-      if (response.ok) {
-        setError("")
-        console.log("Sign in successful. Redirecting to the App.")
-      } else {
-        setError(body.message)
-        clearPassword()
-      }
-      setIsLoading(false)
-    } catch (error) {
-      console.error("Submit error: ", error)
-      setError("Something went wrong. Try again later")
-      setIsLoading(false)
-    }
+        setIsPending(false)
+        setError(error?.response?.data?.message || "Something went wrong. Try again later")
+      })
   }
 
   return (
@@ -62,7 +63,7 @@ function SignInFormController() {
       email={formData.email}
       password={formData.password}
       error={error}
-      isLoading={isLoading}
+      isPending={isPending}
       onChange={onChange}
       onSubmit={onSubmit}
     />

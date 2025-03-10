@@ -20,7 +20,7 @@ export const handlers = [
       return HttpResponse.json(
         {
           id: "fr01-sdfw-grev-qwd73",
-          title: "Demo User",
+          name: "Demo User",
           email: "demo@demo.com",
         },
         {
