@@ -22,24 +22,44 @@
   font-weight: 700;
 }
 
-@mixin text-base {
-  font-size: 16px;
+@mixin text-xs {
+  font-size: var(--font-size-xs);
+  line-height: 1.125;
+}
+
+@mixin text-sm {
+  font-size: var(--font-size-sm);
+  line-height: 1.25;
+}
+
+@mixin text-md {
+  font-size: var(--font-size-md);
   line-height: 1.5;
 }
 
 @mixin text-lg {
-  font-size: 18px;
+  font-size: var(--font-size-lg);
   line-height: 1.75;
 }
 
-@mixin text-xlg {
-  font-size: 26px;
+@mixin text-xl {
+  font-size: var(--font-size-xl);
   line-height: 1.75;
 }
 
-@mixin text-sm {
-  font-size: 14px;
-  line-height: 1.25;
+@mixin text-2xl {
+  font-size: var(--font-size-2xl);
+  line-height: 1.75;
+}
+
+@mixin text-3xl {
+  font-size: var(--font-size-3xl);
+  line-height: 1.75;
+}
+
+@mixin text-4xl {
+  font-size: var(--font-size-4xl);
+  line-height: 1.75;
 }
 
 @mixin transition {

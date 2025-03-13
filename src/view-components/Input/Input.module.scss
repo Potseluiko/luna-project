@@ -19,7 +19,7 @@
   }
 
   &.medium {
-    @include mixins.text-base;
+    @include mixins.text-md;
 
     padding: 12px 16px;
     border-radius: 4px;

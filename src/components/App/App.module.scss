@@ -2,8 +2,11 @@
 
 .root {
   margin: 0 auto;
+  max-width: calc(22rem + 48px);
+}
+
+.container {
   padding: 60px 24px 80px 24px;
-  max-width: 400px;
 }
 
 .header {
@@ -18,7 +21,7 @@
   }
 
   &-text {
-    @include mixins.text-xlg;
+    @include mixins.text-2xl;
     @include mixins.font-semibold;
 
     margin-top: 12px;
