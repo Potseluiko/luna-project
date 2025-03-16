@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { postSignIn } from "../../features/currentUser/currentUserActions"
-import SignInForm from "../../components/SignInForm/SignInForm.jsx"
+import { LoginForm } from "../../components/LoginForm/LoginForm"
 
-function SignInFormController() {
+export const LoginController = () => {
   const dispatch = useDispatch()
 
   const [isPending, setIsPending] = useState(false)
@@ -59,7 +59,7 @@ function SignInFormController() {
   }
 
   return (
-    <SignInForm
+    <LoginForm
       email={formData.email}
       password={formData.password}
       error={error}
@@ -69,5 +69,3 @@ function SignInFormController() {
     />
   )
 }
-
-export default SignInFormController

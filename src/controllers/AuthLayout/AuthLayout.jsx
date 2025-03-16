@@ -1,8 +1,8 @@
-import SignInFormController from "../../controllers/SignInFormController/SignInFormController.jsx"
+import { Outlet } from "react-router"
 import lunaImg from "/luna.svg"
-import classes from "./App.module.scss"
+import classes from "./AuthLayout.module.scss"
 
-function App() {
+export const AuthLayout = () => {
   return (
     <div className={classes.root}>
       <div className={classes.container}>
@@ -13,11 +13,9 @@ function App() {
           </div>
         </div>
         <div className={classes.content}>
-          <SignInFormController />
+          <Outlet />
         </div>
       </div>
     </div>
   )
 }
-
-export default App

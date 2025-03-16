@@ -1,0 +1,21 @@
+@use "../../styles/mixins" as mixins;
+
+.title {
+  @include mixins.font-semibold;
+  @include mixins.text-lg;
+
+  margin-bottom: 20px;
+}
+
+.field {
+  margin: 16px 0;
+}
+
+.error {
+  margin: 8px 0 20px;
+  color: var(--text-error);
+}
+
+.footer {
+  margin-top: 24px;
+}

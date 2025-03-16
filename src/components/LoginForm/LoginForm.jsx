@@ -1,9 +1,11 @@
+import { Link } from "react-router"
 import Button from "../../view-components/Button/Button.jsx"
 import Input from "../../view-components/Input/Input.jsx"
-import Link from "../../view-components/Link/Link.jsx"
-import classes from "./SignInForm.module.scss"
+import LinkNormal from "../../view-components/Link/Link.jsx"
 
-function SignInForm({ onChange, ...props }) {
+import classes from "./LoginForm.module.scss"
+
+export const LoginForm = ({ onChange, ...props }) => {
   const handleChange = (event) => {
     onChange({
       [event.target.name]: event.target.value,
@@ -47,12 +49,10 @@ function SignInForm({ onChange, ...props }) {
         </Button>
       </form>
       <div className={classes.footer}>
-        <Link href="/sign-up">Sign up</Link>
+        <Link to="/register">Sign up</Link>
         <br />
-        <Link href="/forgot-password">Forgot your password?</Link>
+        <LinkNormal href="/forgot-password">Forgot your password?</LinkNormal>
       </div>
     </>
   )
 }
-
-export default SignInForm
