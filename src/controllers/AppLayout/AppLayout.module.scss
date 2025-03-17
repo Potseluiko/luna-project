@@ -1,0 +1,47 @@
+@use "../../styles/mixins" as mixins;
+
+.root {
+  margin: 0 auto;
+  max-width: calc(100rem + 48px);
+}
+
+.container {
+  padding: 0 24px;
+}
+
+.header {
+  padding: 24px 0;
+  display: flex;
+  background: hsla(0, 0%, 90%, 0.2);
+
+  &-left {
+    flex: 1;
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.logo {
+  display: flex;
+
+  &-image {
+    margin-right: 8px;
+    height: 2.62rem;
+  }
+
+  &-text {
+    @include mixins.text-2xl;
+    @include mixins.font-semibold;
+
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+.content {
+  padding: 24px 0
+}
