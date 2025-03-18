@@ -6,7 +6,10 @@ export const Articles = () => {
       <h1>Articles</h1>
       <p>Articlessss.</p>
       <p>
-        <Link to="/articles/1">Article 1</Link>
+        <Link to="/admin/articles/1">Article 1</Link>
+      </p>
+      <p>
+        <Link to="/admin/articles/2">Article 2</Link>
       </p>
     </div>
   )

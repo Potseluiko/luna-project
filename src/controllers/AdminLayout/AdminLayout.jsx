@@ -20,7 +20,19 @@ export const AdminLayout = () => {
           </div>
         </div>
         <div className={classes.content}>
-          <Outlet />
+          <div className={classes.sidebar}>
+            <ul>
+              <li>
+                <Link to={"/admin"}>Dashboard</Link>
+              </li>
+              <li>
+                <Link to={"/admin/articles"}>Articles</Link>
+              </li>
+            </ul>
+          </div>
+          <div className={classes.main}>
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>

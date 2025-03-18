@@ -7,7 +7,7 @@ export const Article = () => {
     <div style={{ padding: "20px", border: "1px solid purple" }}>
       <h1>Article id = {id}</h1>
       <p>Article Article Article Article.</p>
-      <Link to="/articles">Articles list</Link>
+      <Link to="/admin/articles">Articles list</Link>
     </div>
   )
 }

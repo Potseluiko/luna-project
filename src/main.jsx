@@ -17,6 +17,7 @@ import { LoginController } from "./controllers/LoginController/LoginController"
 import { RegisterController } from "./controllers/RegisterController/RegisterController"
 import { Articles } from "./controllers/Articles/Articles"
 import { Article } from "./controllers/Article/Article"
+import { Dashboard } from "./controllers/Dashboard/Dashboard"
 
 // const queryClient = new QueryClient()
 
@@ -48,9 +49,12 @@ enableMocking().then(() => {
               <Route path="register" element={<RegisterController />} />
             </Route>
 
-            <Route path="articles" element={<AdminLayout />}>
-              <Route index element={<Articles />} />
-              <Route path=":id" element={<Article />} />
+            <Route path="admin" element={<AdminLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="articles">
+                <Route index element={<Articles />} />
+                <Route path=":id" element={<Article />} />
+              </Route>
             </Route>
           </Routes>
         </BrowserRouter>

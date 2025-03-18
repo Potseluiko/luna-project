@@ -43,5 +43,15 @@
 }
 
 .content {
-  padding: 24px 0
+  padding: 24px 0;
+  display: flex;
+  gap: 24px;
+}
+
+.sidebar {
+  width: 220px;
+}
+
+.main {
+  flex: 1;
 }
