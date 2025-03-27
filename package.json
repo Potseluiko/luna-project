@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "prettier-check": "prettier --check .",
@@ -27,13 +27,14 @@
     "@vitejs/plugin-react": "^4.3.4",
     "classnames": "^2.5.1",
     "eslint": "^9.17.0",
-    "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
     "msw": "^2.7.0",
     "prettier": "3.4.2",
     "sass": "^1.83.4",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.28.0",
     "vite": "^6.0.5"
   },
   "msw": {

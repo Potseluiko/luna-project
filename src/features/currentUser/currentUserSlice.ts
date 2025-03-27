@@ -1,11 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, SliceCaseReducers, SliceSelectors } from "@reduxjs/toolkit"
 import { postSignIn, removeCurrentUser } from "./currentUserActions"
+import { TCurrentUser } from "./currentUserTypes.ts"
 
-const initialState = {
+type TState = {
+  data: null | TCurrentUser
+}
+
+const initialState: TState = {
   data: null,
 }
 
-export const currentUserSlice = createSlice({
+export const currentUserSlice = createSlice<TState, SliceCaseReducers<TState>, "currentUser", SliceSelectors<TState>>({
   name: "currentUser",
   initialState,
   reducers: {},
@@ -16,7 +21,7 @@ export const currentUserSlice = createSlice({
 
         state.data = { id, name, email }
       })
-      .addCase(postSignIn.rejected, (state, action) => {})
+      // .addCase(postSignIn.rejected, (state, action) => {})
       .addCase(removeCurrentUser, (state) => {
         state.data = initialState.data
       })

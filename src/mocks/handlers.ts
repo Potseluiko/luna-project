@@ -1,10 +1,11 @@
-import { http, delay, HttpResponse } from "msw"
+import { http, delay, HttpResponse, HttpHandler } from "msw"
+import { TSignInPayload } from "../features/currentUser/currentUserTypes"
 
-export const handlers = [
-  http.get("/*", async () => {}),
+export const handlers: HttpHandler[] = [
+  http.get("/*", async (): Promise<void> => {}),
 
-  http.post("/api/signin", async ({ request }) => {
-    let nextPost
+  http.post<any, TSignInPayload>("/api/signin", async ({ request }): Promise<Response> => {
+    let nextPost: TSignInPayload
 
     try {
       nextPost = await request.json()

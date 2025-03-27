@@ -9,7 +9,7 @@ import "./styles/index.scss"
 // import App from "./components/App/App"
 
 import { AdminLayout } from "./controllers/AdminLayout/AdminLayout"
-import { AppLayout } from "./controllers/AppLayout/AppLayout"
+import { AppLayout } from "./controllers/AppLayout/AppLayout.tsx"
 import { AuthLayout } from "./controllers/AuthLayout/AuthLayout"
 import { Home } from "./controllers/Home/Home"
 import { About } from "./controllers/About/About"
@@ -31,8 +31,14 @@ async function enableMocking() {
   return worker.start()
 }
 
+const root = document.getElementById("root")
+
 enableMocking().then(() => {
-  createRoot(document.getElementById("root")).render(
+  if (!root) {
+    throw new Error("Root element not found")
+  }
+
+  createRoot(root).render(
     <StrictMode>
       <Provider store={store}>
         {/*<QueryClientProvider client={queryClient}>*/}
